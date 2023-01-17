@@ -21,7 +21,7 @@ const Home = () => {
                 </p>
                 <div className={styles.buttons}>
                     <button className={styles.button_bright} onClick={() => navigate('/login')}>Login</button>
-                    <button className={styles.button_dim} onClick={() => navigate('/register')}>Registro</button>
+                    <button className={styles.button_dim} onClick={() => navigate('/signup')}>Registro</button>
                 </div>
                 <a className={styles.explore} href="">Explorar Catalogo</a>
             </div>

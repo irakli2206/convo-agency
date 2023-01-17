@@ -18,9 +18,9 @@ const Signup = () => {
   const navigate = useNavigate()
 
   const schema = Yup.object().shape({
-    email: Yup.string().required("Required"),
+    email: Yup.string().required("Required").email("Email Invalid"),
     password: Yup.string().required("Required"),
-    passwordConfirm: Yup.string().required("Required"),
+    passwordConfirm: Yup.string().required("Required").oneOf([Yup.ref('password')], "Passwords don't match"),
 
   })
 
@@ -53,20 +53,21 @@ const Signup = () => {
               console.log(vals)
             }}
           >
-            {({ errors, touched }) => (
+            {({ errors, touched, values, handleChange }) => (
               <Form className={styles.form}>
-                <Field as={Input} name='email' label='Email' type='email' />
+                <Field component={Input} name='email' label='Email' type='email' 
+                />
 
-                <Field as={Input} name='password' label='Senha' type='password' />
-                <Field as={Input} name='passwordConfirm' label='Confirmar Senha' type='password' />
-                <button type='submit' className={styles.submit_btn}>Registrar</button>
+                <Field component={Input} name='password' label='Senha' type='password' />
+                <Field component={Input} name='passwordConfirm' label='Confirmar Senha' type='password' />
+                <button type='submit' className={styles.submit_btn} onClick={() => console.log(values)}>Registrar</button>
                 <TextualBorder text='Ou se registre com' />
                 <div className={styles.socials}>
                   <SocialsButton image={Instagram} url='https://www.instagram.com/' />
                   <SocialsButton image={Twitter} url='https://www.twitter.com/' />
                   <SocialsButton image={Facebook} url='https://www.facebook.com/' />
                 </div>
-                <p className={styles.signup_link}>Ja e membro?<a>  Faca signup</a></p>
+                <p className={styles.signup_link}>Ja e membro?<a href='/login'>  Faca Login</a></p>
               </Form> 
             )}
           </Formik>

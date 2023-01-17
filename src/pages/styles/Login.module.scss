@@ -1,0 +1,115 @@
+@import '../../styles/mixins.scss';
+
+
+.login {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: 'red';
+
+    a {
+        color: $link !important;
+
+    }
+
+    @include xl {
+        .login_container {
+            background: black;
+            width: 50% !important;
+            min-height: 100vh;
+        }
+
+        .logo_container {
+            display: flex !important;
+            gap: 14px;
+
+            .animeyabu {
+                letter-spacing: 0.065em;
+                font-size: 22px;
+
+                .yabu {
+                    color: $primary;
+                }
+            }
+        }
+
+        .cat_container {
+            flex-direction: column;
+        }
+
+        .back_btn {
+            top: 100px !important;
+        }
+    }
+
+    .login_container {
+        width: 100%;
+        padding: 24px;
+
+        .logo_container {
+            display: none;
+        }
+
+        .back_btn {
+            top: 0 ;
+            position: absolute;
+            margin-top: 24px;
+            background: transparent;
+            border: none;
+            height: 28px;
+            width: 28px;
+            background-image: url('../../assets/back-arrow.svg');
+        }
+
+        .form_container {
+            text-align: center;
+            margin-inline: auto;
+            width: clamp(200px, 100%, 400px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .cat_container {
+                font-family: 'Poppins';
+                display: flex;
+                align-items: center;
+
+                h1 {
+                    margin-block: 10px 10px;
+                    letter-spacing: 0.065em;
+
+                }
+
+                p {
+                    margin-top: 0;
+                }
+            }
+
+            .form {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+
+                .submit_btn {
+                    @include button
+                }
+
+                .socials {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-evenly;
+                }
+
+                .login_link {
+                    text-align: center;
+                    font-family: $font-secondary;
+
+                }
+            }
+        }
+
+
+
+    }
+}

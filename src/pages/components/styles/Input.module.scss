@@ -15,12 +15,20 @@
         background: rgba(255, 255, 255, 0.47);
         display: flex;
         justify-content: space-between;
+        &[data-has-error=true]{
+            border-color: $error
+        };
         
-        * {
-            padding: 20px
+        svg {
+            margin-block: auto;
+            margin-right: 20px;
+            fill: $grey-light;
+            cursor: pointer;
         }
 
         input {
+            padding: 20px;
+
             font-family: $font-input;
             width: 100%;
             border: none;
@@ -30,6 +38,15 @@
             &:focus-visible {
                 outline: none;
             }
+
+
         }
+
+    }
+
+    .error {
+        font-family: $font-primary;
+        color: $error;
+        text-align: end;
     }
 }

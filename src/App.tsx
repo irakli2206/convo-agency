@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import './App.scss';
 import Home from './pages/Home';
-import Login from './pages/Signup';
+import Login from './pages/Login';
 import Main from './pages/Main';
 import Signup from './pages/Signup';
 
@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path='/' element={<Home />} />
-        {/* <Route path='/login' element={<Login />} /> */}
+        <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
 
         <Route path='/main' element={<Main />} />
