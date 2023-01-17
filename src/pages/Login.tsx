@@ -53,9 +53,9 @@ const Login = () => {
                     >
                         {({ errors, touched }) => (
                             <Form className={styles.form}>
-                                <Field as={Input} name='email' label='Email' type='email' />
+                                <Field component={Input} name='email' label='Email' type='email' />
 
-                                <Field as={Input} name='password' label='Senha' type='password' />
+                                <Field component={Input} name='password' label='Senha' type='password' />
                                 <a style={{textAlign: 'end', fontFamily: 'Poppins'}} href="">Esqueci a senha</a>
                                 <button type='submit' className={styles.submit_btn}>Login</button>
                                 <TextualBorder text='Usar Login Social' />
