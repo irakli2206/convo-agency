@@ -1,6 +1,6 @@
 import React from 'react'
 import Banner from './components/Banner'
-import styles from './styles/Login.module.scss'
+import styles from './styles/Signup.module.scss'
 import Logo from '../assets/logo.svg'
 import BackArrow from '../assets/back-arrow.svg'
 import LoneCat from '../assets/lone-cat.svg'
@@ -14,7 +14,7 @@ import Instagram from '../assets/ig-logo.svg'
 import Twitter from '../assets/twitter-logo.svg'
 import Facebook from '../assets/fb-logo.svg'
 
-const Login = () => {
+const Signup = () => {
   const navigate = useNavigate()
 
   const schema = Yup.object().shape({
@@ -25,9 +25,9 @@ const Login = () => {
   })
 
   return (
-    <div className={styles.login}>
+    <div className={styles.signup}>
 
-      <div className={styles.login_container}>
+      <div className={styles.signup_container}>
         <div className={styles.logo_container}>
           <img src={Logo} alt="" />
           <h1 className={styles.animeyabu}>anime<span className={styles.yabu}>yabu.</span></h1>
@@ -66,7 +66,7 @@ const Login = () => {
                   <SocialsButton image={Twitter} url='https://www.twitter.com/' />
                   <SocialsButton image={Facebook} url='https://www.facebook.com/' />
                 </div>
-                <p className={styles.login_link}>Ja e membro?<a>  Faca Login</a></p>
+                <p className={styles.signup_link}>Ja e membro?<a>  Faca signup</a></p>
               </Form> 
             )}
           </Formik>
@@ -79,4 +79,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Signup

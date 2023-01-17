@@ -3,7 +3,7 @@
 
 .App {
     background: $small-screen-gradient;
-    height: 100vh;
+    min-height: 100vh;
 
     @include xl {
         background: $dark;

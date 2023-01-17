@@ -3,11 +3,17 @@
 
 .banner {
     display: none;
+    width: 50%;
+    height: 100%;
     font-family: $font-secondary;
     text-align: center;
 
     @include xl {
-        display: initial;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .image_container {
