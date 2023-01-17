@@ -1,0 +1,15 @@
+@import '../../../styles/mixins.scss';
+
+.border {
+    width: 100%;
+    font-family: $font-primary;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .start, .end {
+        width: 25%;
+        height: 2px;
+        background-color: white;
+    }
+}

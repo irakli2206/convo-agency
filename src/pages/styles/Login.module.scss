@@ -1,6 +1,96 @@
 @import '../../styles/mixins.scss';
 
+
 .login {
-    @include page;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
     background: 'red';
+
+    @include xl {
+        .login_container {
+            background: black;
+            width: 50% !important;
+        }
+    }
+
+    .login_container {
+        height: 100%;
+        width: 100%;
+        padding: 24px;
+
+        .logo_container {
+            display: flex;
+            gap: 14px;
+
+            .animeyabu {
+                letter-spacing: 0.065em;
+                font-size: 22px;
+                .yabu {
+                    color: $primary;
+                }
+            }
+        }
+
+        .back_btn {
+            margin-top: 24px;
+            background: transparent;
+            border: none;
+            height: 28px;
+            width: 28px;
+            background-image: url('../../assets/back-arrow.svg');
+        }
+
+        .form_container {
+            text-align: center;
+            margin-inline: auto;
+            width: clamp(200px, 100%, 400px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .cat_container {
+                font-family: 'Poppins';
+    
+                h1 {
+                    margin-block: 10px 10px;
+                    letter-spacing: 0.065em;
+
+                }
+    
+                p {
+                    margin-top: 0;
+                }
+            }
+
+            .form {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+
+                .submit_btn {
+                    @include button
+                }
+
+                .socials {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-evenly;
+                }
+
+                .login_link {
+                    text-align: center;
+                    font-family: $font-secondary;
+
+                    a {
+                        color: $link !important;
+                    }
+                }
+            }
+        }
+
+
+        
+    }
 }

@@ -9,7 +9,7 @@ const Home = () => {
 
     return (
         <div className={styles.home}>
-            <div className={styles.right}>
+            <div className={styles.container}>
                 <div className={styles.image_container}>
                     <img src={Ellipse} alt='' className={styles.ellipse} />
                     <img src={Boy} alt='' className={styles.boy} />
@@ -19,8 +19,6 @@ const Home = () => {
                 <p className={styles.content}>Assista animes online em HD, legendado ou dublado, no seu celular ou computador. <br />
                     <span className={styles.content_bold}>Animeyabu, o seu portal de animes online!</span>
                 </p>
-            </div>
-            <div className={styles.left}>
                 <div className={styles.buttons}>
                     <button className={styles.button_bright} onClick={() => navigate('/login')}>Login</button>
                     <button className={styles.button_dim} onClick={() => navigate('/register')}>Registro</button>

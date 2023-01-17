@@ -1,0 +1,35 @@
+@import '../../../styles/mixins.scss';
+
+
+.input {
+    width: 100%;
+
+    .input_label {
+        display: block;
+        text-align: start;
+        font-family: $font-primary
+    }
+
+    .input_box {
+        @include standard-border;
+        background: rgba(255, 255, 255, 0.47);
+        display: flex;
+        justify-content: space-between;
+        
+        * {
+            padding: 20px
+        }
+
+        input {
+            font-family: $font-input;
+            width: 100%;
+            border: none;
+            background: transparent;
+            font-size: 16px;
+
+            &:focus-visible {
+                outline: none;
+            }
+        }
+    }
+}
