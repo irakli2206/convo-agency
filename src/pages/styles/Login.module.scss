@@ -1,0 +1,6 @@
+@import '../../styles/mixins.scss';
+
+.login {
+    @include page;
+    background: 'red';
+}

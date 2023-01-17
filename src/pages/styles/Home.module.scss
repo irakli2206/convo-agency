@@ -1,0 +1,116 @@
+@import '../../styles/mixins.scss';
+
+.home {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: $font-secondary;
+    text-align: center;
+
+    @include xl {
+        flex-direction: row-reverse;
+
+        .left {
+            height: 100%;
+            justify-content: center;
+            background: black;
+        }
+
+        .right {
+            justify-content: center;
+            height: 100% !important;
+            .animeyabu {
+                font-size: 80px !important
+            }
+
+            .content {
+                font-size: 18px !important;
+            }
+        }
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 50%;
+
+        .image_container {
+            padding-top: 63px;
+            position: relative;
+            width: 100%;
+            height: 50vh;
+
+            .ellipse {
+                position: absolute;
+                width: 80%;
+                height: 80%;
+                left: 50%;
+                transform: translateX(-50%);
+                padding-right: 1;
+            }
+
+            .boy {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                z-index: 10;
+            }
+        }
+
+        .animeyabu {
+            font-weight: $bolder;
+            letter-spacing: 0.065em;
+            font-size: 36px;
+
+            .yabu {
+                color: $primary
+            }
+        }
+
+        .content {
+            font-size: 16px;
+
+            .content_bold {
+                font-weight: $bold;
+            }
+        }
+
+    }
+
+    .left {
+        padding-inline: 16px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .buttons {
+            width: clamp(200px, 100%, 360px);
+            margin-inline: auto;
+            background: $grey-dark;
+            display: flex;
+            border-radius: $border-radius;
+            margin-block: 20px;
+
+
+            .button_bright {
+                @include button;
+                flex: 10;
+            }
+
+            .button_dim {
+                background: transparent;
+                border: none;
+                flex: 9
+            }
+        }
+
+        .explore {
+            color: $link
+        }
+    }
+
+
+}
