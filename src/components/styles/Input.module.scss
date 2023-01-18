@@ -1,4 +1,4 @@
-@import '../../../styles/mixins.scss';
+@import '../../styles/mixins.scss';
 
 
 .input {
@@ -15,10 +15,13 @@
         background: rgba(255, 255, 255, 0.47);
         display: flex;
         justify-content: space-between;
-        &[data-has-error=true]{
+
+        &[data-has-error=true] {
             border-color: $error
-        };
-        
+        }
+
+        ;
+
         svg {
             margin-block: auto;
             margin-right: 20px;
@@ -34,6 +37,7 @@
             border: none;
             background: transparent;
             font-size: 16px;
+
 
             &:focus-visible {
                 outline: none;

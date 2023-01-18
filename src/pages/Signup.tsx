@@ -1,18 +1,19 @@
 import React from 'react'
-import Banner from './components/Banner'
+import Banner from '../components/Banner'
 import styles from './styles/Signup.module.scss'
 import Logo from '../assets/logo.svg'
 import BackArrow from '../assets/back-arrow.svg'
 import LoneCat from '../assets/lone-cat.svg'
 import { Form, Formik, Field } from 'formik'
 import * as Yup from 'yup'
-import Input from './components/Input'
+import Input from '../components/Input'
 import { useNavigate } from 'react-router-dom'
-import TextualBorder from './components/TextualBorder'
-import SocialsButton from './components/SocialsButton'
+import TextualBorder from '../components/TextualBorder'
+import SocialsButton from '../components/SocialsButton'
 import Instagram from '../assets/ig-logo.svg'
 import Twitter from '../assets/twitter-logo.svg'
 import Facebook from '../assets/fb-logo.svg'
+import { createUser } from '../api/auth'
 
 const Signup = () => {
   const navigate = useNavigate()
@@ -49,8 +50,9 @@ const Signup = () => {
               passwordConfirm: ''
             }}
             validationSchema={schema}
-            onSubmit={(vals, actions) => {
+            onSubmit={async (vals, actions) => {
               console.log(vals)
+              await createUser(vals.email, vals.password)
             }}
           >
             {({ errors, touched, values, handleChange }) => (
@@ -60,7 +62,7 @@ const Signup = () => {
 
                 <Field component={Input} name='password' label='Senha' type='password' />
                 <Field component={Input} name='passwordConfirm' label='Confirmar Senha' type='password' />
-                <button type='submit' className={styles.submit_btn} onClick={() => console.log(values)}>Registrar</button>
+                <button type='submit' className={styles.submit_btn} >Registrar</button>
                 <TextualBorder text='Ou se registre com' />
                 <div className={styles.socials}>
                   <SocialsButton image={Instagram} url='https://www.instagram.com/' />

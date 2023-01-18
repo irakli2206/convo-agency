@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './styles/Banner.module.scss'
-import Boy from '../../assets/jumping-boy.svg'
-import Ellipse from '../../assets/ellipse.svg'
+import Boy from '../assets/jumping-boy.svg'
+import Ellipse from '../assets/ellipse.svg'
 
 
 const Banner = () => {

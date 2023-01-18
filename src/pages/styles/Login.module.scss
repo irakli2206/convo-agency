@@ -33,11 +33,7 @@
                 }
             }
         }
-
-        .cat_container {
-            flex-direction: column;
-        }
-
+ 
         .back_btn {
             top: 100px !important;
         }
@@ -73,6 +69,7 @@
             .cat_container {
                 font-family: 'Poppins';
                 display: flex;
+                flex-direction: column;
                 align-items: center;
 
                 h1 {

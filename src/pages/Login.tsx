@@ -1,18 +1,19 @@
 import React from 'react'
-import Banner from './components/Banner'
+import Banner from '../components/Banner'
 import styles from './styles/Login.module.scss'
 import Logo from '../assets/logo.svg'
 import BackArrow from '../assets/back-arrow.svg'
 import TopImage from '../assets/phone-login-image.svg'
 import { Form, Formik, Field } from 'formik'
 import * as Yup from 'yup'
-import Input from './components/Input'
+import Input from '../components/Input'
 import { useNavigate } from 'react-router-dom'
-import TextualBorder from './components/TextualBorder'
-import SocialsButton from './components/SocialsButton'
+import TextualBorder from '../components/TextualBorder'
+import SocialsButton from '../components/SocialsButton'
 import Instagram from '../assets/ig-logo.svg'
 import Twitter from '../assets/twitter-logo.svg'
 import Facebook from '../assets/fb-logo.svg'
+import { logIn } from '../api/auth'
 
 const Login = () => {
     const navigate = useNavigate()
@@ -22,6 +23,7 @@ const Login = () => {
         password: Yup.string().required("Required"),
 
     })
+
 
     return (
         <div className={styles.login}>
@@ -47,8 +49,10 @@ const Login = () => {
                             password: '',
                         }}
                         validationSchema={schema}
-                        onSubmit={(vals, actions) => {
-                            console.log(vals)
+                        onSubmit={async (vals, actions) => {
+                            await logIn(vals.email, vals.password)
+                            console.log(localStorage.getItem('userEmail'))
+                            if(localStorage.getItem('userEmail')) navigate('/main')
                         }}
                     >
                         {({ errors, touched }) => (
@@ -64,7 +68,7 @@ const Login = () => {
                                     <SocialsButton image={Twitter} url='https://www.twitter.com/' />
                                     <SocialsButton image={Facebook} url='https://www.facebook.com/' />
                                 </div>
-                                <p className={styles.login_link}>Ja e membro?<a href='/login'> Registre-se</a></p>
+                                <p className={styles.login_link}>Ja e membro?<a href='/signup'> Registre-se</a></p>
                             </Form>
                         )}
                     </Formik>

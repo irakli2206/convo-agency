@@ -1,0 +1,16 @@
+@import '../../styles/mixins.scss';
+
+.main {
+    @include flex-center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    font-family: $font-primary;
+    font-size: 3rem;
+
+    .signout_btn {
+        @include button;
+        font-size: 2rem;
+        width: 250px;
+    }
+}
