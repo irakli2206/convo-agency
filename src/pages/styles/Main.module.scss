@@ -6,7 +6,11 @@
     height: 100vh;
     width: 100%;
     font-family: $font-primary;
-    font-size: 3rem;
+
+
+    .email {
+        font-size: clamp(24px, 5vw, 64px);
+     }
 
     .signout_btn {
         @include button;

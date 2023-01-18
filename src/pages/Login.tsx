@@ -56,7 +56,7 @@ const Login = () => {
                         }}
                     >
                         {({ errors, touched }) => (
-                            <Form className={styles.form}>
+                            <Form className={styles.form} noValidate>
                                 <Field component={Input} name='email' label='Email' type='email' />
 
                                 <Field component={Input} name='password' label='Senha' type='password' />

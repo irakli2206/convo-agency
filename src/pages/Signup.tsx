@@ -20,7 +20,7 @@ const Signup = () => {
 
   const schema = Yup.object().shape({
     email: Yup.string().required("Required").email("Email Invalid"),
-    password: Yup.string().required("Required"),
+    password: Yup.string().required("Required").min(8, 'Must be at least 8 characters'),
     passwordConfirm: Yup.string().required("Required").oneOf([Yup.ref('password')], "Passwords don't match"),
 
   })
@@ -52,17 +52,17 @@ const Signup = () => {
             validationSchema={schema}
             onSubmit={async (vals, actions) => {
               console.log(vals)
-              await createUser(vals.email, vals.password)
+              await createUser(vals.email, vals.password).then(() => navigate('/login'))
             }}
           >
             {({ errors, touched, values, handleChange }) => (
-              <Form className={styles.form}>
+              <Form className={styles.form} noValidate>
                 <Field component={Input} name='email' label='Email' type='email' 
                 />
 
                 <Field component={Input} name='password' label='Senha' type='password' />
                 <Field component={Input} name='passwordConfirm' label='Confirmar Senha' type='password' />
-                <button type='submit' className={styles.submit_btn} >Registrar</button>
+                <button type='submit'  className={styles.submit_btn} >Registrar</button>
                 <TextualBorder text='Ou se registre com' />
                 <div className={styles.socials}>
                   <SocialsButton image={Instagram} url='https://www.instagram.com/' />
